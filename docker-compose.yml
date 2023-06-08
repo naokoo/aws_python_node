@@ -1,0 +1,10 @@
+# docker-compose.yml
+version: '3'
+services:
+  app:
+    build: .
+    container_name: 'aws_python3'
+    volumes:
+      - ./user/opt:/opt
+      - ./user/aws:/home/myuser/.aws   # AWS Credential file 
+

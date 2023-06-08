@@ -1,3 +1,23 @@
+# .gitignore
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python build and cache files
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pyz
+*.pyw
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
