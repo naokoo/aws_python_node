@@ -42,13 +42,16 @@ super user
 docker exec -it --user root $CONTAINER_ID bash
 ```
 
+This will start a bash shell in the container.
+
+
 ## Checking $CONTAINER_ID 
 
 ```
 docker ps
 ```
 
-This will start a bash shell in the container.
+
 
 ## Checking Installed Applications
 Once inside the container, you can check the installed applications using their respective commands, for example:
