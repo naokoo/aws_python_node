@@ -30,7 +30,7 @@ ENV LANG ja_JP.UTF-8
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install --upgrade BeautifulSoup4
-RUN pip install --upgrade sklearn
+RUN pip install --upgrade scikit-learn
 RUN pip install --upgrade tqdm
 
 # Create a non-root user
