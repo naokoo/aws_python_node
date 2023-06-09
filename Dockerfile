@@ -4,6 +4,9 @@ FROM python:3.9-alpine
 # Set timezone
 ENV TZ=Asia/Tokyo
 
+# Install sudo
+RUN apk add --no-cache sudo
+
 # Install necessary packages
 RUN apk add --no-cache \
     nodejs \
