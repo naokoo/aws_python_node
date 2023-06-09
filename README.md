@@ -42,7 +42,7 @@ super user
 docker exec -it --user root $CONTAINER_ID bash
 ```
 
-$CONTAINER_ID Check
+## Checking $CONTAINER_ID 
 
 ```
 docker ps
