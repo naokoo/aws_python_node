@@ -78,3 +78,18 @@ The following directories on the host are mounted to the Docker container:
 ```
 
 You can access these directories from within the Docker container.
+
+
+## Troubleshooting When Unable to Access the Container
+
+If you are unable to access the container, you can try the following steps:
+
+1. Run the `docker ps -a` command to display a list of all containers. The `-a` option shows both running and stopped containers.
+
+2. Identify the name or ID of the specific container from the list.
+
+3. Use the `docker start <container-name-or-id>` command to start a stopped container.
+
+4. Once the container is running, use the `docker exec -it <container-name-or-id> bash` command to access the container.
+
+Please follow the above steps accordingly. If the container is stopped, you need to start it first.
