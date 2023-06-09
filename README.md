@@ -34,7 +34,18 @@ docker-compose down
 You can enter the running container using the following command:
 
 ```
-docker exec -it aws_python3 /bin/bash
+docker exec -it $CONTAINER_ID /bin/bash
+```
+
+super user
+```
+docker exec -it --user root $CONTAINER_ID bash
+```
+
+$CONTAINER_ID Check
+
+```
+docker ps
 ```
 
 This will start a bash shell in the container.
