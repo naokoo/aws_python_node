@@ -19,18 +19,37 @@ RUN apk add --no-cache \
     py-pip \
     jq \
     bash \
-    && pip install --upgrade awscli \
-    && apk add --no-cache sudo
+    musl-dev gcc g++ make \
+    && pip install --upgrade awscli
 
 # Install Japanese locale
-RUN apk add --no-cache icu-libs
+RUN apk add --no-cache icu-libs icu-dev
 ENV LANG ja_JP.UTF-8
+
+# Install Fortran for scikit-learn
+# RUN apk add --no-cache gfortran
 
 # Python Library
 RUN pip install --upgrade pip
-RUN pip install --upgrade setuptools
+#RUN pip install numpy
+# Install numpy
+RUN pip install --no-cache-dir numpy
+
+# RUN pip install scipy
+RUN pip install cython
+RUN pip install setuptools
+RUN pip install wheel
 RUN pip install --upgrade BeautifulSoup4
-RUN pip install --upgrade scikit-learn
+
+# Install OpenBLAS
+#RUN apk add --no-cache openblas-dev
+
+# Install scikit-learn
+#RUN pip install --upgrade scikit-learn
+
+#RUN sudo apk add py3-scikit-learn
+RUN apk update && apk add py3-scikit-learn
+
 RUN pip install --upgrade tqdm
 
 # Create a non-root user
