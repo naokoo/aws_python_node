@@ -16,7 +16,8 @@ RUN apk add --no-cache \
     py-pip \
     jq \
     bash \
-    && pip install --upgrade awscli
+    && pip install --upgrade awscli \
+    && apk add --no-cache sudo
 
 # Install Japanese locale
 RUN apk add --no-cache icu-libs
@@ -31,6 +32,8 @@ RUN pip install --upgrade tqdm
 
 # Create a non-root user
 RUN adduser -D myuser
+RUN addgroup myuser wheel
+RUN echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER myuser
 
 WORKDIR /home/myuser
@@ -39,4 +42,3 @@ WORKDIR /home/myuser
 VOLUME ["/home/myuser/.aws"]
 
 CMD ["/bin/bash"]
-
