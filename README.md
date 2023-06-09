@@ -93,3 +93,29 @@ If you are unable to access the container, you can try the following steps:
 4. Once the container is running, use the `docker exec -it <container-name-or-id> bash` command to access the container.
 
 Please follow the above steps accordingly. If the container is stopped, you need to start it first.
+
+## To rebuild a Docker image, follow these steps:
+
+Open your command line or terminal and navigate to the directory where the Dockerfile is located.
+
+Use the following command to build the Docker image:
+
+```
+docker build -t <image-name> .
+```
+
+Replace <image-name> with the desired name for your newly built Docker image. The . specifies that the Dockerfile is located in the current directory.
+
+Example:
+
+```
+docker build -t myapp-image .
+```
+
+The build process will start, and the image will be constructed based on the instructions in the Dockerfile.
+
+Once the build process completes, the new Docker image will be created locally.
+
+After successfully rebuilding the Docker image, you can launch containers using the new image by using commands like docker-compose up.
+
+
